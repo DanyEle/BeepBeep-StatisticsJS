@@ -12,7 +12,7 @@ STATISTICS_PATH = "http://127.0.0.1:5001"
 def stats_all():
 
     #TODO: logic for actually getting the user_id over here and checking whether the user is loggedin.
-    #can be taken from the original file
+    #can be taken from the original statistics.py file
     user_id = 1
 
     #perform a request to the statistics web server
