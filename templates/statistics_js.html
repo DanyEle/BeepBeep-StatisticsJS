@@ -34,6 +34,16 @@
                 {%  endfor %}
 
 
+                var layout_distance = {
+                    title: 'Distance over runs',
+                    xaxis: {
+                        title: 'Run Names',
+                    },
+                    yaxis: {
+                        title: 'Distance'
+                    }
+                };
+
                  var distance_plot =
                  [
                     {
@@ -43,6 +53,16 @@
                     }
                   ];
 
+                  var layout_avg_speed = {
+                    title: 'Average Speed over runs',
+                    xaxis: {
+                        title: 'Run Names',
+                    },
+                    yaxis: {
+                        title: 'Average Speed'
+                    }
+                };
+
                  var avg_speed_plot =
                  [
                     {
@@ -51,6 +71,16 @@
                         type: 'bar'
                     }
                   ];
+
+                  var layout_avg_heart_rate = {
+                    title: 'Average Heart Rate over runs',
+                    xaxis: {
+                        title: 'Run Names',
+                    },
+                    yaxis: {
+                        title: 'Average Heart Rate'
+                    }
+                };
 
 
                  var avg_heart_rate_plot =
@@ -62,6 +92,17 @@
                     }
                   ];
 
+
+                  var layout_elevation_gain = {
+                    title: 'Elevation Gain over runs',
+                    xaxis: {
+                        title: 'Run Names',
+                    },
+                    yaxis: {
+                        title: 'Elevation Gain'
+                    }
+                };
+
                 var elevation_gain_plot =
                  [
                     {
@@ -70,6 +111,17 @@
                         type: 'bar'
                     }
                   ];
+
+                var layout_elapsed_time_ = {
+                    title: 'Elapsed Time over runs',
+                    xaxis: {
+                        title: 'Run Names',
+                    },
+                    yaxis: {
+                        title: 'Elapsed Time'
+                    }
+                };
+
 
                   var elapsed_time_plot =
                  [
@@ -81,11 +133,11 @@
                   ];
 
 
-                Plotly.newPlot('distancePlot', distance_plot);
-                Plotly.newPlot('avgSpeedPlot', avg_speed_plot);
-                Plotly.newPlot('avgHeartRatePlot', avg_heart_rate_plot);
-                Plotly.newPlot('elevationGainPlot', elevation_gain_plot);
-                Plotly.newPlot('elapsedTimePlot', elapsed_time_plot);
+                Plotly.newPlot('distancePlot', distance_plot, layout_distance);
+                Plotly.newPlot('avgSpeedPlot', avg_speed_plot, layout_avg_speed);
+                Plotly.newPlot('avgHeartRatePlot', avg_heart_rate_plot, layout_avg_heart_rate);
+                Plotly.newPlot('elevationGainPlot', elevation_gain_plot, layout_elevation_gain);
+                Plotly.newPlot('elapsedTimePlot', elapsed_time_plot, layout_elapsed_time_);
 
 
             </script>
