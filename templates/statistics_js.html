@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <!-- external dependency !-->
+        <script src="https://cdn.plot.ly/plotly-1.2.0.min.js"></script>
+    <body>
+
+
+    <h1> Your Runs' statistics: </h1>
+
+
+        <div id="distancePlot" style="width:600px;height:250px;"></div>
+        <hr>
+        <div id="avgSpeedPlot" style="width:600px;height:250px;"></div>
+        <hr>
+        <div id="avgHeartRatePlot" style="width:600px;height:250px;"></div>
+        <hr>
+        <div id="elevationGainPlot" style="width:600px;height:250px;"></div>
+        <hr>
+        <div id="elapsedTimePlot" style="width:600px;height:250px;"></div>
+
+
+
+    <!-- TODO: CSS graphics and checks if user not logged in. Can be taken from the original statistics.py file !-->
+
+      <script>
+
+                var run_names_fixed = []
+
+                //pre-process all the run names so as to remove the unicode characters
+                //that cause problems in rendering plots' labels over the X axis
+                //and turn them into strings again
+                {% for run_name in run_names_concatenated%}
+                    run_names_fixed.push("{{ run_name }}");
+                {%  endfor %}
+
+
+                 var distance_plot =
+                 [
+                    {
+                        x: run_names_fixed,
+                        y: {{ distance_array }},
+                        type: 'bar'
+                    }
+                  ];
+
+                 var avg_speed_plot =
+                 [
+                    {
+                        x: run_names_fixed,
+                        y: {{ average_speed_array }},
+                        type: 'bar'
+                    }
+                  ];
+
+
+                 var avg_heart_rate_plot =
+                 [
+                    {
+                        x: run_names_fixed,
+                        y: {{ average_heart_rate_array }},
+                        type: 'bar'
+                    }
+                  ];
+
+                var elevation_gain_plot =
+                 [
+                    {
+                        x: run_names_fixed,
+                        y: {{ elevation_gain_array }},
+                        type: 'bar'
+                    }
+                  ];
+
+                  var elapsed_time_plot =
+                 [
+                    {
+                        x: run_names_fixed,
+                        y: {{ elevation_gain_array }},
+                        type: 'bar'
+                    }
+                  ];
+
+
+                Plotly.newPlot('distancePlot', distance_plot);
+                Plotly.newPlot('avgSpeedPlot', avg_speed_plot);
+                Plotly.newPlot('avgHeartRatePlot', avg_heart_rate_plot);
+                Plotly.newPlot('elevationGainPlot', elevation_gain_plot);
+                Plotly.newPlot('elapsedTimePlot', elapsed_time_plot);
+
+
+            </script>
+
+    </body>
+</html>
