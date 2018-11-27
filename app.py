@@ -29,13 +29,13 @@ def stats_all():
     #just a dictionary, can get elements from it
     stats_response = stats_request.json()
 
-    distance_array = stats_response["distance_array"]
-    average_speed_array = stats_response["average_speed_array"]
-    average_heart_rate_array = stats_response["average_heart_rate_array"]
-    elevation_gain_array = stats_response["elevation_gain_array"]
-    elapsed_time_array = stats_response["elapsed_time_array"]
-    run_names_array = stats_response["run_names_array"]
-    run_ids_array = stats_response["run_ids_array"]
+    distance_array = stats_response["distances"]
+    average_speed_array = stats_response["average_speeds"]
+    average_heart_rate_array = stats_response["average_heart_rates"]
+    elevation_gain_array = stats_response["elevation_gains"]
+    elapsed_time_array = stats_response["elapsed_times"]
+    run_names_array = stats_response["run_names"]
+    run_ids_array = stats_response["run_ids"]
 
     run_names_concatenated = concatenate_run_name_id(run_names_array, run_ids_array)
 
